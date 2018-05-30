@@ -1,0 +1,8 @@
+<config>
+  <modules>
+    <Improntus_Ando>
+      <active>true</active>
+      <codePool>community</codePool>
+    </Improntus_Ando>
+  </modules>
+</config>
