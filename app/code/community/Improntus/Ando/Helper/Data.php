@@ -41,6 +41,14 @@ class Improntus_Ando_Helper_Data extends Mage_Core_Helper_Abstract
     }
 
     /**
+     * @return string
+     */
+    public function getPromocode()
+    {
+        return Mage::getStoreConfig('shipping/ando_webservice/promocode',Mage::app()->getStore());
+    }
+
+    /**
      * @return array
      */
     public function getDireccionRetiro()

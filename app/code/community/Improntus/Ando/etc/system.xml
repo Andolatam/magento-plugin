@@ -37,6 +37,14 @@
                             <show_in_store>1</show_in_store>
                             <sort_order>40</sort_order>
                         </password>
+                        <promocode translate="label">
+                            <label>Promo code Ando:</label>
+                            <frontend_type>text</frontend_type>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>45</sort_order>
+                        </promocode>
                         <direccion type="group" translate="label">
                             <label>Dirección de despacho</label>
                             <frontend_type>text</frontend_type>
