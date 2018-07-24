@@ -124,14 +124,14 @@ class Improntus_Ando_Model_Carrier_AndoBicicleta extends Mage_Shipping_Model_Car
                 'shipTo_province'        => $address['region_id'] ? $helper->getProvincia($address['region_id']) : $address['region'],
                 'shipTo_country'         => 'Argentina',
                 'endSpecialInstructions' => $address['observaciones'],
-                'packageWidth'           => 2,
-                'packageLarge'           => 2,
-                'packageHeight'          => 2,
+                'packageWidth'           => $dimensiones['ancho'],
+                'packageLarge'           => $dimensiones['largo'],
+                'packageHeight'          => $dimensiones['alto'],
                 'packageWeight'          => $pesoTotal,
                 'shippingMethod'         => 'BIKE',
                 'digitalSignature'       => false,
                 'currency'               => 'ARS',
-                'promocode'              => null
+                'promocode'              => $helper->getPromocode()
             ]);
 
             if($costoEnvio)
@@ -159,7 +159,7 @@ class Improntus_Ando_Model_Carrier_AndoBicicleta extends Mage_Shipping_Model_Car
                 $error = Mage::getModel('shipping/rate_result_error');
                 $error->setCarrier($this->_code);
                 $error->setCarrierTitle($this->getConfigData('title'));
-                $error->setErrorMessage('No existen cotizaciones para el código postal ingresado');
+                $error->setErrorMessage('No existen cotizaciones para la dirección ingresada');
                 $error->setMethodDescription($this->getConfigData('description'));
 
                 return $error;
